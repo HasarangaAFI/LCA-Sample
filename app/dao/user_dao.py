@@ -22,13 +22,17 @@ from config import Config
 
 class UserDAO:
     def __init__(self, uri: str = Config.MONGODB_URI):
+        print("Initializing UserDAO")
         self.client = MongoClient(uri)
         self.db = self.client[Config.DATABASE_NAME]
         self.collection = self.db[Config.USER_COLLECTION]
 
     def create_user(self, user_data):
+        print(f"Creating user: {user_data['username']}")
         return self.collection.insert_one(user_data)
 
     def get_user_by_username(self, username):
+        print(f"Fetching user by username: {username}")
         return self.collection.find_one({"username": username})
+
 

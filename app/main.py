@@ -9,6 +9,15 @@
 from fastapi import FastAPI
 from app.controllers import auth_router
 
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
 def create_app() -> FastAPI:
     app = FastAPI()
     

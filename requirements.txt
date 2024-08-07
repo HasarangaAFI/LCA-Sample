@@ -1,7 +1,10 @@
 fastapi
 uvicorn
+gunicorn
 pymongo
-pydantic
+pydantic>=2.0.0
 python-dotenv
 passlib[bcrypt]
-jose
+python-jose>=3.3.0
+email_validator>=1.1.2
+python-multipart
